@@ -1,57 +1,209 @@
 const Modal = {
- open(){
-  // Abrir modal
-  // Adicionar a class active ao modal
+    open() {
+        // Abrir modal
+        // Adicionar a class active ao modal
 
-  document.querySelector('.modal-overlay')
-  .classList.add('active')
- },
- close(){
-  // Fechar modal
-  // Remover a class active ao modal
+        document.querySelector('.modal-overlay')
+            .classList.add('active')
+    },
+    close() {
+        // Fechar modal
+        // Remover a class active ao modal
 
-  document.querySelector('.modal-overlay')
-  .classList.remove('active')
- }
+        document.querySelector('.modal-overlay')
+            .classList.remove('active')
+    }
 }
 
+const Transaction = {
+    all: [
+        {
+            description: 'Luz',
+            amount: -9070,
+            date: '23/01/2021'
+        },
+        {
+            description: 'Freela',
+            amount: 209000,
+            date: '23/01/2021'
+        },
+        {
+            description: 'Aluguel',
+            amount: -10000,
+            date: '23/01/2021'
+        },
+        {
+            description: 'Celular',
+            amount: 10000,
+            date: '23/01/2021'
+        },
+    ],
 
-// Funcionalidade para conversam de numeros adicionando a virgula e ponto
-function moeda(a, e, r, t) {
- let n = ""
-   , h = j = 0
-   , u = tamanho2 = 0
-   , l = ajd2 = ""
-   , o = window.Event ? t.which : t.keyCode;
- if (13 == o || 8 == o)
-     return !0;
- if (n = String.fromCharCode(o),
- -1 == "0123456789".indexOf(n))
-     return !1;
- for (u = a.value.length,
- h = 0; h < u && ("0" == a.value.charAt(h) || a.value.charAt(h) == r); h++)
-     ;
- for (l = ""; h < u; h++)
-     -1 != "0123456789".indexOf(a.value.charAt(h)) && (l += a.value.charAt(h));
- if (l += n,
- 0 == (u = l.length) && (a.value = ""),
- 1 == u && (a.value = "0" + r + "0" + l),
- 2 == u && (a.value = "0" + r + l),
- u > 2) {
-     for (ajd2 = "",
-     j = 0,
-     h = u - 3; h >= 0; h--)
-         3 == j && (ajd2 += e,
-         j = 0),
-         ajd2 += l.charAt(h),
-         j++;
-     for (a.value = "",
-     tamanho2 = ajd2.length,
-     h = tamanho2 - 1; h >= 0; h--)
-         a.value += ajd2.charAt(h);
-     a.value += r + l.substr(u - 2, u)
- }
- return !1
+    add(transaction){
+        Transaction.all.push(transaction)
+
+
+        App.reload()
+    },
+
+    remove(index){
+        Transaction.all.splice(index, 1)
+
+        App.reload()
+    },
+
+    incomes() {
+        let income = 0
+        // pegar todas as transacoes
+        // para cada transacao
+        Transaction.all.forEach(transaction => {
+            // se ela for maior que zero 
+            if(transaction.amount > 0) {
+                // somar a uma variavel e retornar a variavel
+                income += transaction.amount;
+            }
+        })
+
+        return income;
+    },
+
+    expenses() {
+        let expense = 0
+        // pegar todas as transacoes
+        // para cada transacao
+        Transaction.all.forEach(transaction => {
+            // se ela for menor que zero 
+            if(transaction.amount < 0) {
+                // somar a uma variavel e retornar a variavel
+                expense += transaction.amount;
+            }
+        })
+
+        return expense;
+    },
+
+    total() {
+    
+        return Transaction.incomes() + Transaction.expenses();
+    }
 }
 
+const DOM = {
+    transactionContainer: document.querySelector('#data-table tbody'),
+
+    addTransaction(transaction, index){
+        const tr = document.createElement('tr')
+        tr.innerHTML = DOM.innerHTMLTransaction(transaction)
+
+        DOM.transactionContainer.appendChild(tr)
+    
+    },
+
+    innerHTMLTransaction(transaction) {
+        const CSSclass = transaction.amount > 0 ? "income" : "expense"
+
+        const amount = Utils.formatCurrency(transaction.amount)
+
+        const html = `
+        
+            <td class="description">${transaction.description}</td>
+            <td class="${CSSclass}">${amount}</td>
+            <td class="date">${transaction.date}</td>
+            <td>
+                <img src="./assets/minus.svg" alt="remover Transação">
+            </td>
+        
+        `
+
+        return html
+    },
+
+    updateBalance() {
+        document
+            .getElementById('incomeDisplay')
+            .innerHTML = Utils.formatCurrency(Transaction.incomes())
+        document
+            .getElementById('expenseDisplay')
+            .innerHTML = Utils.formatCurrency(Transaction.expenses())
+        document
+            .getElementById('totalDisplay')
+            .innerHTML = Utils.formatCurrency(Transaction.total())
+    },
+
+    clearTransactions(){
+        DOM.transactionContainer.innerHTML = ""
+    }
+}
+
+const Utils = {
+    formatCurrency(value){
+        const signal = Number(value) < 0 ? "-" : ""
+
+        value = String(value).replace(/\D/g, "")
+
+        value = Number(value) / 100
+
+        value = value.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        })
+
+        return signal + value
+    }
+}
+
+const Form = {
+    description: document.querySelector('input#description'),
+    amount: document.querySelector('input#amount'),
+    date: document.querySelector('input#date'),
+    
+    getValues(){
+        return {
+            description: Form.description.value,
+            amount: Form.amount.value,
+            date: Form.date.value,
+        }
+    },
+    
+    validateFields() {
+        const { description, amount, date } = Form.getValues()
+
+        if(description.trim() === "" || amount.trim() === "" || date.trim() === "" ) {
+            throw new Error ("por favor, preencha todos os campos corretamente")
+        }
+    },
+
+    submit(event) {
+        event.preventDefault()
+
+        try {
+            Form.validateFields()
+        } catch (error) {
+            alert(error.message)
+        }
+        
+        
+
+
+    }
+}
+
+const App = {
+    init() {
+
+        Transaction.all.forEach(transaction => {
+            DOM.addTransaction(transaction)
+        })
+        
+        DOM.updateBalance()
+           
+    },
+
+    reload() {
+        DOM.clearTransactions()
+        App.init()
+    },
+}
+
+App.init()
 
