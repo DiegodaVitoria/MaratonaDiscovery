@@ -5,12 +5,21 @@
  box-sizing: border-box;
 }
 
+:root{
+  --branco:#f0f2f5;
+  --verde: #3dd705;
+  --verde-escuro: #49aa26;
+  --vermelho: #e92929;
+  --preto: #000;
+  --transparente: rgba(0, 0, 0, 0.7)
+}
+
 html {
  font-size: 93,75%;
 }
 
 body {
- background: #f0f2f5;
+ background: var(--branco) ;
  font-family: 'Poppins', sans-serif;
 }
 
@@ -43,7 +52,7 @@ h2 {
 /* ---------------- Links e Buttons -----------*/
 
 a {
- color: #49aa26;
+ color: var(--verde-escuro);
  text-decoration: none;
 }
 
@@ -60,7 +69,7 @@ button {
  border-radius: 0.25rem;
 
  color: white;
- background: #49aa26;
+ background: var(--verde-escuro);
 
  padding: 0;
  cursor: pointer;
@@ -103,7 +112,7 @@ header {
 }
 
 header h1#logo {
- color: #fff;
+ color: var(--branco);
  font-weight: 100;
 }
 
@@ -114,13 +123,13 @@ header h1#logo {
 /* ---------- Main ---------- */
 
 #balance h2 {
- color: #fff;
+ color: var(--branco);
  margin-top: 0;
 
 }
 
 .card {
- background: #fff;
+ background: var(--branco);
  padding: 1.5rem 2rem;
  border-radius: 0.25rem;
 
@@ -147,7 +156,7 @@ header h1#logo {
 
 .card.total {
  background: #49aa26;
- color: #fff;
+ color: var(--branco);
 }
 /* ---------- table ---------- */
 #transaction{
@@ -173,7 +182,7 @@ table tbody tr th:last-child{
 }
 
 table  th {
- background: #fff;
+ background: var(--branco);
  font-weight: normal;
  padding: 1rem 2rem;
  text-align: left;
@@ -189,7 +198,7 @@ table tbody tr:hover {
 }
 
 table tbody td {
- background: #fff;
+ background: var(--branco);
  font-weight: normal;
  padding: 1rem 2rem;
  text-align: left;
