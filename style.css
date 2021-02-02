@@ -7,8 +7,8 @@
 
 :root{
   --branco:#f0f2f5;
-  --verde: #3dd705;
-  --verde-escuro: #49aa26;
+  --verde: #00848c;
+  --verde-escuro: #003c40;
   --vermelho: #e92929;
   --preto: #000;
   --transparente: rgba(0, 0, 0, 0.7)
@@ -57,7 +57,7 @@ a {
 }
 
 a:hover {
- color: #3dd705;
+ color: var(--verde);
 
 }
 
@@ -77,7 +77,7 @@ button {
 }
 
 button:hover{
- background: #3dd73d;
+ background: var(--verde);
 }
 
 
@@ -87,8 +87,8 @@ button:hover{
 }
 
 .button.cancel{
- color: #e92929;
- border: 2px #e92929 solid;
+ color: var(--vermelho);
+ border: 2px var(--vermelho) solid;
  border-radius: 00.25rem;
 
  height: 50px;
@@ -106,7 +106,7 @@ button:hover{
 
 /* ---------- Header ---------- */
 header {
- background: #2d4a22;
+ background: var(--verde-escuro);
  padding: 2rem 0 12rem;
  text-align: center;
 }
@@ -155,7 +155,7 @@ header h1#logo {
 }
 
 .card.total {
- background: #49aa26;
+ background: var(--verde);
  color: var(--branco);
 }
 /* ---------- table ---------- */
@@ -214,7 +214,7 @@ td.income{
 }
 
 td.expense{
- color: #e92929;
+ color: var(--vermelho);
 }
 
 td.date{
@@ -225,7 +225,7 @@ td.date{
  width: 100%;
  height: 100%;
 
- background-color: rgba(0, 0, 0, 0.7);
+ background-color: var(--transparente);
 
  position: fixed;
  top: 0;
