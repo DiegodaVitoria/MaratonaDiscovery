@@ -85,6 +85,7 @@ button:hover{
 .button.new {
  display: inline-block;
  margin-bottom: .8rem;
+
 }
 
 .button.cancel{
