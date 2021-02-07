@@ -13,7 +13,7 @@
 <br>
 
 <p align="center">
-  <img alt="dev.finances" src="./assets/Capturar.JPG" width="100%">
+  <img alt="dev.finances" src="./assets/Capturar.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
