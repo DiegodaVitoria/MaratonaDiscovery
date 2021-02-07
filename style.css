@@ -24,6 +24,30 @@ body {
  font-family: 'Poppins', sans-serif;
 }
 
+/**/
+.custom-shape-divider-top-1612709922 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: 220px;
+  z-index: -5;
+}
+
+.custom-shape-divider-top-1612709922 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 96px;
+}
+
+.custom-shape-divider-top-1612709922 .shape-fill {
+  fill: #003C40;
+}
+/**/
+
 .sr-only {
  position: absolute;
  width: 1px;
@@ -84,7 +108,7 @@ button:hover{
 
 .button.new {
  display: inline-block;
- margin-bottom: .8rem;
+ margin: .8rem 0;
 
 }
 
@@ -113,10 +137,7 @@ header {
  text-align: center;
 }
 
-header h1#logo {
- color: var(--branco);
- font-weight: 100;
-}
+
 
 #balance {
  margin-top: -8rem;
@@ -138,6 +159,7 @@ header h1#logo {
  margin-bottom: 2rem;
 
  color: #363f5f;
+ box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
 
 .card h3 {
@@ -163,8 +185,9 @@ header h1#logo {
 /* ---------- table ---------- */
 #transaction{
  display: block;
- width: 100%;
  overflow-x: auto;
+width: min(90vw, 800px);
+ margin: auto 0 5rem;
 }
 #data-table {
  width: 100%;
@@ -300,11 +323,25 @@ input {
 /* ---------- Footer ---------- */
 footer {
  text-align: center;
- padding: 4rem 0 2rem;
- color: #363f5f;
+ padding: 0rem 0 2rem;
+ color: #ffffff;
  opacity: 1.6;
+
+ background: var(--verde);
 }
 
+.social img {
+  display: inline-flex;
+  justify-content: center;
+  width: 2.5rem;
+  color: #969cb3;
+  padding: 2rem 0 1rem;
+ }
+
+ .credito a {
+   color: #707070;
+ }
+ 
 
 /* ------------- Responsive -------*/
 
