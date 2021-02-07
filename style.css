@@ -242,9 +242,6 @@ td.expense{
  color: var(--vermelho);
 }
 
-td.date{
-
-}
 /* ---------- Modal ---------- */
 .modal-overlay {
  width: 100%;
