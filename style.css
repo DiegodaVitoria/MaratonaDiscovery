@@ -17,6 +17,12 @@
 
 html {
  font-size: 93,75%;
+
+}
+
+img .fundo{
+  z-index: -9;
+  position: absolute;
 }
 
 body {
@@ -111,6 +117,25 @@ button:hover{
  margin: .8rem 0;
 
 }
+
+.button.login {
+ height: 3.5rem;
+ width: 30%;
+
+  border-radius: 0.25rem;
+ 
+  color: var(--branco-escuro);
+  background: var(--verde-escuro);
+ 
+  padding: 0;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+ }
+
 
 .button.cancel{
  color: var(--vermelho);
@@ -331,14 +356,53 @@ footer {
   display: inline-flex;
   justify-content: center;
   width: 2.5rem;
-  color: #969cb3;
   padding: 2rem 0 1rem;
  }
 
  .credito a {
    color: #707070;
  }
+ /* ------------- Login -------*/
+  .colorize {
+  background: linear-gradient(180deg, #003c40, #e4e4e4);
+  padding: 2rem 0 12rem;
+  text-align: center;
+ }
+
+ .colorize img{
+   position: relative;
+   top: 25px;
+ }
+ .corpo.login{
+   background: var(--verde-escuro);
+   height: 100%;
+   width: 100%;
+ }
+
+ .corpo {
+  width: min(90vw, 800px);
+  margin: auto;
+  text-align: -webkit-center ;
  
+ }
+
+
+
+ body .login{
+   background: var(--verde-escuro);
+ }
+
+ .rodape {
+  text-align: center;
+  padding: 0rem 0 2rem;
+  color: #ffffff;
+  opacity: 1.6;
+ 
+  background: var(--verde);
+  bottom: -178px;
+
+  position: relative;
+ }
 
 /* ------------- Responsive -------*/
 
