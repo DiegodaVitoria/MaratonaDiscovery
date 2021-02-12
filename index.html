@@ -38,7 +38,7 @@
                             <input 
                                 type="text" 
                                 id="emailogin" 
-                                name="emailogin"
+                                name="usuario"
                                 placeholder="E-mail"
                             />
                         </div>
@@ -48,9 +48,9 @@
                                 class="sr-only" 
                                 for="keylogin">Senha</label>
                             <input 
-                                type="number"
+                                type="password"
                                 id="keylogin" 
-                                name="keylogin"
+                                name="senha"
                                 placeholder="Senha"
                             />
                             <small class="help">Use senha com no minimo 6 digitos</small>
@@ -61,7 +61,7 @@
                             onclick="Modal.close()"
                             href="#" 
                             class="button cancel">Cancelar</a>
-                            <button onClick="window.open('./index2.html'); return false;" >Salvar</button>
+                            <button onClick="Login()" >Salvar</button>
                         </div>
                     </form>
                 </div>
