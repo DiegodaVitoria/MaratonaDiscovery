@@ -25,7 +25,7 @@ function Login() {
     usuario=usuario.toLowerCase();
     var senha= document.getElementsByName('senha')[0].value;
     seha=senha.toLowerCase();
-    if (usuario=="admin@admin" && senha=="admin") {
+    if (usuario=="diego" && senha=="997511889") {
       window.location="/index2.html";
       done=1;
     }

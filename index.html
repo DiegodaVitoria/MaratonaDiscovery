@@ -1,87 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
-        <link rel="stylesheet" href="./style.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
-        <title>Contas</title>
-    </head>
-    <body>
-        
-        <header class="colorize">
-            <img src="./assets/logo.svg" alt="Logo Dev Finance">
-        </header>
 
-        <main class="corpo">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <title>Contas</title>
+</head>
 
-            <a href="#" 
-            onclick="Modal.open()"
-            class="button login">Login</a>
+<body>
 
+    <header class="colorize">
+        <img src="./assets/logo.svg" alt="Logo Dev Finance">
+    </header>
 
+    <main class="corpo">
+        <div class="cad">
+            <div id="formcad">
+                <h2>Login</h2>
+                <form action="" onsubmit="Form.submit(event)">
+                    <div class="input-group">
+                        <label class="sr-only" for="emailogin">Email</label>
+                        <input type="text" id="emailogin" name="usuario" placeholder="E-mail" />
+                    </div>
+                    <h2>Senha</h2>
+                    <div class="input-group">
+                        <label class="sr-only" for="keylogin">Senha</label>
+                        <input type="password" id="keylogin" name="senha" placeholder="Senha" />
+                        <small class="help">Use senha com no minimo 6 digitos</small>
+                    </div>
 
-        </main>
-
-        <div class="modal-overlay">
-            <div class="modal">
-                <div id="form">
-                    <h2>Login</h2>
-                    <form action="" onsubmit="Form.submit(event)">
-                        <div class="input-group">
-                            <label 
-                                class="sr-only" 
-                                for="emailogin">Email</label>
-                            <input 
-                                type="text" 
-                                id="emailogin" 
-                                name="usuario"
-                                placeholder="E-mail"
-                            />
-                        </div>
-                        <h2>Senha</h2>
-                        <div class="input-group">
-                            <label 
-                                class="sr-only" 
-                                for="keylogin">Senha</label>
-                            <input 
-                                type="password"
-                                id="keylogin" 
-                                name="senha"
-                                placeholder="Senha"
-                            />
-                            <small class="help">Use senha com no minimo 6 digitos</small>
-                        </div>
-
-                        <div class="input-group actions">
-                            <a 
-                            onclick="Modal.close()"
-                            href="#" 
-                            class="button cancel">Cancelar</a>
-                            <button onClick="Login()" >Salvar</button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="input-group actions">
+                        <a href="#" onclick="Modal.open()" class="button login">Cadastrar</a>
+                        <button onClick="Login()">Salvar</button>
+                    </div>
+                </form>
             </div>
         </div>
 
-        <div class="rodape">
-            <div class="custom-shape-divider-top-1612716745">
-                <img src="./assets/wavesOpacity.svg" alt="" srcset="">
-            </div>
-            <p>by.Diego da Vitória</p>
-            <div class="social">
-                <a href="https://www.linkedin.com/in/diego-da-vitoria/"><img src="./assets/linkedin.svg" alt="Linkedin" ></a>
-                <a href="https://github.com/DiegodaVitoria"><img src="./assets/github.svg" alt="github" ></a>
-                <a href="https://www.instagram.com/diego_davitoria/"><img src="./assets/instagram.svg" alt="Facebook" ></a>
-                <a href="https://whats.link/diegodavitoria"><img src="./assets/whatsapp.svg" alt="whatsapp +5527997511889" ></a>
-            </div>
-            <div id="credito">Ícones feitos por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
-        </div>
 
-        <script src="./scripts2.js"></script>
-    </body>
+
+    </main>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h2>Login</h2>
+                <form action="" onsubmit="Form.submit(event)">
+                    <div class="input-group">
+                        <label class="sr-only" for="name">Nome</label>
+                        <input type="text" id="name" name="usuario" placeholder="Nome" />
+                    </div>
+
+                    <h2>Email</h2>
+                    <div class="input-group">
+                        <label class="sr-only" for="emailogin">Email</label>
+                        <input type="text" id="emailogin" name="usuario" placeholder="E-mail" />
+                    </div>
+
+                    <h2>Senha</h2>
+                    <div class="input-group">
+                        <label class="sr-only" for="keylogin">Senha</label>
+                        <input type="password" id="keylogin" name="senha" placeholder="Senha" />
+                        <small class="help">Use senha com no minimo 6 digitos</small>
+                    </div>
+
+                    <div class="input-group actions">
+                        <a onclick="Modal.close()" href="#" class="button cancel">Cancelar</a>
+                        <button onClick="Login()">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="rodape">
+        <div class="custom-shape-divider-top-1612716745">
+            <img src="./assets/wavesOpacity.svg" alt="" srcset="">
+        </div>
+        <p>by.Diego da Vitória</p>
+        <div class="social">
+            <a href="https://www.linkedin.com/in/diego-da-vitoria/"><img src="./assets/linkedin.svg" alt="Linkedin"></a>
+            <a href="https://github.com/DiegodaVitoria"><img src="./assets/github.svg" alt="github"></a>
+            <a href="https://www.instagram.com/diego_davitoria/"><img src="./assets/instagram.svg" alt="Facebook"></a>
+            <a href="https://whats.link/diegodavitoria"><img src="./assets/whatsapp.svg"
+                    alt="whatsapp +5527997511889"></a>
+        </div>
+        <div id="credito">Ícones feitos por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+                href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
+    </div>
+
+    <script src="./scripts2.js"></script>
+</body>
+
 </html>

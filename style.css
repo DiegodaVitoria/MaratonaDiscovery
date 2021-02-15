@@ -10,6 +10,7 @@
   --branco-escuro:#e4e4e4;
   --verde: #00848c;
   --verde-escuro: #003c40;
+  --verde-cadastro: #003b60;
   --vermelho: #e92929;
   --preto: #000;
   --transparente: rgba(0, 0, 0, 0.7)
@@ -111,6 +112,9 @@ button:hover{
  background: var(--verde);
 }
 
+.button.login:hover{
+  background: var(--verde);
+ }
 
 .button.new {
  display: inline-block;
@@ -125,7 +129,7 @@ button:hover{
   border-radius: 0.25rem;
  
   color: var(--branco-escuro);
-  background: var(--verde-escuro);
+  background: var(--verde-cadastro);
  
   padding: 0;
   cursor: pointer;
@@ -138,8 +142,9 @@ button:hover{
 
 
 .button.cancel{
- color: var(--vermelho);
+ color: var(--branco);
  border: 2px var(--vermelho) solid;
+ background: #c90000;
  border-radius: 00.25rem;
 
  height: 50px;
@@ -155,6 +160,29 @@ button:hover{
  opacity: 1;
 }
 
+.botao.sair{
+  display: flex;
+  justify-content: flex-end;
+  width: min(90vw, 800px);
+  margin: auto;
+  position: relative;
+  top: 45px;
+}
+
+
+.button.sair{
+  color: var(--branco);
+    border: 2px var(--vermelho) solid;
+    background: #c90000;
+    border-radius: 00.25rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0.6;
+ }
+ 
 /* ---------- Header ---------- */
 header {
  background: var(--verde-escuro);
@@ -309,9 +337,17 @@ td.expense{
  max-width: 500px;
 }
 
+#formcad{
+  max-width: 300px;
+}
+
 #form h2 {
  margin-top: 0;
 }
+
+#formcad h2 {
+  margin-top: 0;
+ }
 
 input {
  border: none;
@@ -371,7 +407,7 @@ footer {
 
  .colorize img{
    position: relative;
-   top: 25px;
+   top: 50px;
  }
  .corpo.login{
    background: var(--verde-escuro);
@@ -402,6 +438,14 @@ footer {
   bottom: -178px;
 
   position: relative;
+ }
+
+ /* ------------- Cadastro -------*/
+ 
+ .cad {
+ 
+  position: relative;
+  z-index: 1;
  }
 
 /* ------------- Responsive -------*/
