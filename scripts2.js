@@ -25,7 +25,7 @@ function Login() {
     usuario=usuario.toLowerCase();
     var senha= document.getElementsByName('senha')[0].value;
     seha=senha.toLowerCase();
-    if (usuario=="diego" && senha=="997511889") {
+    if (usuario=="admin" && senha=="0000") {
       window.location="/index2.html";
       done=1;
     }
@@ -35,29 +35,24 @@ function Login() {
 
 
 const Form = {
+    name: document.querySelector('input#name'),
     emailogin: document.querySelector('input#emailogin'),
     keylogin: document.querySelector('input#keylogin'),
 
 
     getValues() {
         return {
+            name: Form.name.value,
             emailogin: Form.emailogin.value,
             keylogin: Form.keylogin.value,
 
         }
     },
 
-    validateFields() {
-        const { emailogin, keylogin, } = Form.getValues()
-        
-        if( emailogin.trim() === "" || 
-            keylogin.trim() === "") {
-                throw new Error("Por favor, preencha todos os campos")
-        }
-    },
 
 
     clearFields() {
+        Form.name.value = ""
         Form.emailogin.value = ""
         Form.keylogin.value = ""
     },
@@ -66,7 +61,6 @@ const Form = {
         event.preventDefault()
 
         try {
-            Form.validateFields()
             Form.clearFields()
             Modal.close()
         } catch (error) {
@@ -79,12 +73,11 @@ const App = {
     init() {
         Transaction.all.forEach(DOM.addTransaction)
         
-        DOM.updateBalance()
 
         Storage.set(Transaction.all)
     },
     reload() {
-        DOM.clearTransactions()
+
         App.init()
     },
 }

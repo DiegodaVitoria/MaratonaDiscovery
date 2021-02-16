@@ -120,7 +120,10 @@ button:hover{
  display: inline-block;
  margin: .8rem 0;
 
+
 }
+
+
 
 .button.login {
  height: 3.5rem;
@@ -172,15 +175,23 @@ button:hover{
 
 .button.sair{
   color: var(--branco);
-    border: 2px var(--vermelho) solid;
+    border: 1px var(--vermelho) solid;
     background: #c90000;
     border-radius: 00.25rem;
     width: 4rem;
-    display: flex;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    opacity: 0.6;
+
+ }
+
+ .button.sair:hover{
+  color: var(--branco);
+    background: #ed6666;
+    border-radius: 00.25rem;
+    width: 4rem;
+    align-items: center;
+    text-align: center;
+
  }
  
 /* ---------- Header ---------- */
@@ -214,6 +225,11 @@ header {
  color: #363f5f;
  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
+
+.card:hover {
+  transform: scale(1.1);
+ }
+
 
 .card h3 {
  font-weight: normal;
@@ -273,6 +289,8 @@ table tbody tr {
 
 table tbody tr:hover {
  opacity: 1;
+ box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+ 
 }
 
 table tbody td {
@@ -343,6 +361,11 @@ td.expense{
 
 #form h2 {
  margin-top: 0;
+}
+
+#form h3 {
+  text-align: center;
+  color: red;
 }
 
 #formcad h2 {

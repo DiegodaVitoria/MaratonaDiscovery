@@ -30,6 +30,10 @@ O dev.finances é uma aplicação de controle financeiro, onde é possível cada
 
 https://maratona-discovery-green.vercel.app/
 
+
+usuario= admin 
+senha= 0000
+
 ## 🔖 Layout
 
 Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/7Vu9DzUaCZIV4nibzkjgB4/dev.finance%24-Maratona-Discover). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
